@@ -10,6 +10,7 @@ def box_office_data():
         Summer of Sam,The Bachelor,Stir of Echoes,Anna and the King,Man on the Moon,Galaxy Quest,Enemy of the State,\
         Waking Ned Devine,Doug's 1st Movie,An Ideal Husband,Everest"
     # NOTE: `top_50_list` is a list
+
     top_50_list = [
         'Star Wars: Episode I - The Phantom Menace', 'The Sixth Sense', 'Austin Powers: The Spy Who Shagged Me',
         'Toy Story 2', 'The Matrix', 'Tarzan', 'Big Daddy', 'The Mummy', 'Runaway Bride', 'The Blair Witch Project',
@@ -26,8 +27,9 @@ def box_office_data():
     # 1.1 TODO: Convert the string `movies_str` into a list and assign it to a variable called `remaining_50_list`
     # NOTE: make sure that the commas that separate the titles in the string don't stay in the titles in the list!
     # Print out the `type` of your new variable, then in a separate print statement, the number of items in it (should be 50).
-    remaining_50_list = movies_str.split(',')
-    remaining_50_list = [movie.strip() for movie in remaining_50_list]
+    # remaining_50_list = movies_str.split(',')
+    # remaining_50_list = [movie.strip() for movie in remaining_50_list]
+    remaining_50_list = [title for title in movies_str.split(',')]
     print(type(remaining_50_list))
     print(len(remaining_50_list))
 
@@ -66,10 +68,10 @@ def box_office_data():
 
     # 1.7 TODO: Print the top 10 movies in `top_100` as a list.
     # Use 'slicing' to accomplish this!
-    top_10 = top_100[:10]
+    top_10 = top_100[slice(0, 10)]
     print(top_10)
 
-# box_office_data()
+box_office_data()
 
 
 
@@ -106,4 +108,4 @@ def create_employee_email_address():
     email = f"{joined_names}@ripplemedia.com"
     print(email)
 
-# create_employee_email_address()
+create_employee_email_address()
